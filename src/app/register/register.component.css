@@ -1,0 +1,15 @@
+.bg-cover{
+  height: 40px;
+  background: rgb(85, 85, 213);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.p-2{
+  padding-inline: 15px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  flex: none !important;
+}

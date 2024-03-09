@@ -1,0 +1,96 @@
+<form [formGroup]="registerForm" fxLayout="row wrap">
+  <div fxLayout="row wrap" fxFlex="100">
+    <div fxFlex="100" class="bg-cover" fxLayoutAlign="space-between"><span style="color: white;">Register</span><mat-icon style="color: white;" mat-dialog-close>cancel</mat-icon></div>
+    <div fxFlex="100">
+      <div fxFlex="0 0 20" style="padding: 10px;">
+        <img src="../../assets/profile.jpg"  style="max-width: 100%; max-height: 200px;">
+      </div>
+      <div fxFlex="80" fxLayout="row wrap" style="padding: 20px;">
+
+
+          <mat-form-field fxFlex="50" class="p-2" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName" type="text" maxlength="20">
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="50" class="p-2" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+
+          <div fxFlex="100" fxLayout="row" class="p-2">
+            <span style="display: flex; align-items: center;" >{{slider.value}}</span>
+            <mat-slider fxFlex="90">
+              <input matSliderThumb formControlName="age" [min]="20" #slider>
+            </mat-slider>
+          </div>
+
+          <mat-form-field fxFlex="50" class="p-2" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Email" formControlName="mail">
+          </mat-form-field>
+
+
+          <mat-form-field fxFlex="50" class="p-2" appearance="outline">
+            <mat-label>Mobile No.</mat-label>
+            <input type="number" matInput placeholder="Mobile No." formControlName="mobile">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="50" class="p-2">
+            <mat-label>State</mat-label>
+            <mat-select placeholder="State" formControlName="state">
+              <mat-option value="Maharashtra">Maharashtra</mat-option>
+              <mat-option value="Goa">Goa</mat-option>
+              <mat-option value="Bihar">Bihar</mat-option>
+              <mat-option value="Punjab">Punjab</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex="50" class="p-2">
+            <mat-label>Country</mat-label>
+            <mat-select placeholder="Country" formControlName="country">
+              <mat-option value="India">India</mat-option>
+              <mat-option value="UK">UK</mat-option>
+              <mat-option value="US">US</mat-option>
+              <mat-option value="England">England</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="100" class="p-2" appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Address" formControlName="address">
+          </mat-form-field>
+
+          <mat-form-field fxFlex="50" class="p-2" appearance="outline">
+            <mat-label>Tags</mat-label>
+            <input matInput placeholder="Tags" formControlName="tags">
+          </mat-form-field>
+
+          <mat-checkbox  formControlName="isSubscribe" color="primary">Subscribe to newsletter</mat-checkbox>
+
+          <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="end" class="p-2">
+            <div fxFlex="20" class="p-2">
+              <button mat-raised-button type="button"  style="height: 40px;width: 100%;" color="warn" (click)="registerForm.reset()">Reset</button>
+            </div>
+            <div fxFlex="20" class="p-2">
+              <button mat-raised-button type="button"  style="height: 40px;width: 100%;" mat-dialog-close>Cancel</button>
+            </div>
+            <div fxFlex="20" class="p-2">
+              <button mat-raised-button type="button" color="primary" style="height: 40px;width: 100%;" (click)="submit()">Submit<a routerLink="user"></a></button>
+            </div>
+
+          </div>
+          <router-outlet></router-outlet>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</form>

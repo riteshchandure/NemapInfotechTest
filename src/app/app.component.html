@@ -1,0 +1,85 @@
+<div class="bg">
+
+  <nav style="padding-top:50px ;">
+
+    <ul>
+      <li>
+        <a href="#" ><span style="font-size: 70px; color: black;"> Demo App </span> </a>
+      </li>
+      <li>
+        <a href="#" ><span> Home </span> </a>
+      </li>
+       <li>
+        <a href="#" ><span> About Us </span> </a>
+      </li>
+       <li>
+        <a href="#" ><span> Jobs </span> </a>
+      </li>
+       <li>
+        <a href="#" ><span> Clients </span> </a>
+      </li>
+       <li>
+        <a href="#" ><span> Employers </span> </a>
+      </li>
+       <li>
+        <a href="#" ><span> Contact Us </span> </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+
+
+      <form fxLayout="row wrap" fxFlex="100">
+        <div fxFlex="100" fxLayoutAlign="space-between" style="padding-inline: 100px;">
+          <mat-form-field  fxFlex="60" style="padding: 10px;" appearance="outline">
+            <mat-label>Enter a job description</mat-label>
+            <input matInput placeholder="Enter a job description">
+          </mat-form-field>
+          <div fxFlex="20"  style="padding: 10px;"   >
+            <button mat-raised-button fxFlex="100" color="primary" type="button" style="width: 100%; height: 60px;">Submit</button>
+          </div>
+        </div>
+
+        <div fxFlex="100" fxLayoutAlign="space-between" style="padding-inline: 100px;">
+
+
+        <section fxFlex="60" style="padding-inline: 10px;">
+
+            <mat-checkbox color="primary" fxFlex="20">Full Time</mat-checkbox>
+            <mat-checkbox color="primary" fxFlex="40">Part Time / Casual / Freelance</mat-checkbox>
+
+            <mat-form-field appearance="outline" fxFlex="40">
+            <mat-label>Select Your Location</mat-label>
+            <mat-select >
+              <mat-option value="Pune">Pune</mat-option>
+              <mat-option value="Mumbai">Mumbai</mat-option>
+              <mat-option value="Amravati">Amravati</mat-option>
+              <mat-option value="Nagpur">Nagpur</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+      </div>
+      <div fxFlex="100" fxLayoutAlign="center">
+        <button type="button" mat-raised-button style="height: 50px; width: 120px;" (click)="openDialog()">Register</button>
+        <div *ngIf="users.length>0" fxFlex="30" style="margin-left: 10px;">
+          <mat-form-field appearance="outline" fxFlex="40">
+            <mat-label>Edit User</mat-label>
+            <mat-select (selectionChange)="editDialog($event.value)">
+              <mat-option *ngFor="let user of users" [value]="user.id">{{user.firstName}} {{user.lastName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      </form>
+
+
+
+
+  </div>
+
+</div>
+<router-outlet></router-outlet>

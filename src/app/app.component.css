@@ -1,0 +1,54 @@
+.bg{
+  background: #000 url(../assets/bgHome.jpg) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  }
+
+  .menu{
+      width: 100%;
+      height: 50px;
+  }
+
+
+  /* remove bullets for ul elements list*/
+  ul {
+      padding-top: 30px;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    a{
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+    }
+
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .example-section {
+      margin: 12px 0;
+    }
+
+    .example-margin {
+      margin: 0 12px;
+    }
+
+
+    .container{
+      display: grid;
+      justify-content: center;
+      align-items: center;
+
+      height: calc(100vh - 150px);
+    }
